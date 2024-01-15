@@ -16,7 +16,7 @@ agent none
 } 
 }
     stage ('DEPLOY') {
-      agent {label 'node2'}
+      agent {label 'test1'}
   steps {
     echo "This is deploy stage"
     sh 'sleep 5'
