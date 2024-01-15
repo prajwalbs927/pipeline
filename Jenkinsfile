@@ -1,5 +1,5 @@
 pipeline {
-agent node2;
+agent dev;
   stages {
     stage ('BUILD') {
   steps {
