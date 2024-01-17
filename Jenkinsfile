@@ -9,8 +9,7 @@ agent none
     stage ('BUILD') {
       agent {label 'node2'}
   steps {
-    echo "This is build stage"
-    echo $name
+    echo "This is build stage $name "
     sh 'sleep 5'
   }
 }
