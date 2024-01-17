@@ -4,7 +4,6 @@ pipeline{
         stage ('Run parallel all stages') {
             parallel {
         stage ('Build'){
-            agent {label 'dev'}
             steps {
                 echo "hello"
             }
