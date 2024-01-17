@@ -2,6 +2,7 @@ pipeline {
 agent {label 'dev'}
 stages {
 stage ('BUILD') {
+  agent {label 'built-in'}
 steps {
 echo " hi"
 }
