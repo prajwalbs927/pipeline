@@ -2,7 +2,7 @@ pipeline {
 agent none
 stages {
     prarallel {
-      stages {
+      stage {
 stage ('BUILD') {
   agent {label 'built-in'}
 steps {
