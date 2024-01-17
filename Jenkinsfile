@@ -1,8 +1,8 @@
 pipeline {
 agent none
 stages {
-  stage {
     prarallel {
+      stages {
 stage ('BUILD') {
   agent {label 'built-in'}
 steps {
