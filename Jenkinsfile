@@ -1,28 +1,20 @@
-pipeline {
-agent none
-stages {
-    stage ('build and deploy parallel') {
-    parallel {
-stage ('BUILD') {
-  agent {label 'built-in'}
+pipeline{
+    agent any
+    stages {
+        stage ('Build'){
+            steps {
+                echo "hello"
+            }
+        }
+        stage ('test'){
 steps {
-echo " hi"
+    echo "how"
 }
-}
-stage ('DEPLOY') {
-  agent {label 'test1'}
-steps {
-echo "how"
-}
-}
-    
-stage ('TEST') {
-  agent {label 'node2'}
-steps {
-echo "why"
-}
-}
-}
-}
-}
+        }
+        stage ('deploy') {
+            steps {
+                echo "why"
+            }
+        }
+    }
 }
