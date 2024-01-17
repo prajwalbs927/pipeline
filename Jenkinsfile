@@ -1,8 +1,8 @@
 pipeline {
 agent none
 stages {
+    stage ('build and deploy parallel') {
     prarallel {
-      stage {
 stage ('BUILD') {
   agent {label 'built-in'}
 steps {
