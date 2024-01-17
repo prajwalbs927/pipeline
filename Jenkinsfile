@@ -1,6 +1,7 @@
 pipeline {
 agent none
-  stages {
+  stages ('run parallel') {
+    parallel {
     stage ('BUILD') {
       agent {label 'node2'}
   steps {
@@ -14,6 +15,7 @@ agent none
     echo "This is test stage"
     sh 'sleep 5'
 } 
+    }
 }
     stage ('DEPLOY parallel') {
       parallel {
