@@ -9,13 +9,13 @@ pipeline{
             }
         }
         stage ('test'){
-            agent {label 'node2'}
+            
 steps {
     echo "how"
 }
         }
         stage ('deploy') {
-            agent {label 'built-in'}
+            
             steps {
                 echo "why"
             }
