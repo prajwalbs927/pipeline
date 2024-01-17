@@ -1,6 +1,8 @@
 pipeline{
     agent any
     stages {
+        stage ('Run parallel all stages') {
+            parallel {
         stage ('Build'){
             steps {
                 echo "hello"
@@ -14,6 +16,8 @@ steps {
         stage ('deploy') {
             steps {
                 echo "why"
+            }
+        }
             }
         }
     }
