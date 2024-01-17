@@ -15,12 +15,13 @@ steps {
 echo "how"
 }
 }
-    }
-  }
+    
 stage ('TEST') {
   agent {label 'node2'}
 steps {
 echo "why"
+}
+}
 }
 }
 }
