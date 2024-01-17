@@ -11,6 +11,8 @@ agent none
   steps {
     echo "This is build stage $name "
     sh 'sleep 5'
+    echo $name 
+    exit 0
   }
 }
     stage ('TEST') {
