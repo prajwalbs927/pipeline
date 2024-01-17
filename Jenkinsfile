@@ -15,7 +15,9 @@ agent none
     sh 'sleep 5'
 } 
 }
-    stage ('DEPLOY') {
+    stage ('DEPLOY parallel') {
+      parallel {
+      stage ('Deploy')
       agent {label 'test1'}
   steps {
     echo "This is deploy stage"
@@ -23,4 +25,5 @@ agent none
   }
     }
   }
+}
 }
