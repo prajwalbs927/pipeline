@@ -1,6 +1,8 @@
 pipeline {
 agent none
 stages {
+  stages {
+    prarallel {
 stage ('BUILD') {
   agent {label 'built-in'}
 steps {
@@ -13,6 +15,8 @@ steps {
 echo "how"
 }
 }
+    }
+  }
 stage ('TEST') {
   agent {label 'node2'}
 steps {
