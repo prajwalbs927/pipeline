@@ -16,7 +16,7 @@ steps {
 }
         }
         stage ('deploy') {
-            agent {label 'built_in'}
+            agent {label 'built-in'}
             steps {
                 echo "why"
             }
