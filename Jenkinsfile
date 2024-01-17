@@ -1,5 +1,8 @@
 pipeline {
 agent none
+  evironment {
+    name = 'prajwal'
+  }
   stages {
     stage ('RUN Parallel') {
     parallel {
@@ -7,6 +10,7 @@ agent none
       agent {label 'node2'}
   steps {
     echo "This is build stage"
+    echo $name
     sh 'sleep 5'
   }
 }
