@@ -1,29 +1,27 @@
 pipeline{
-    agent any
+    agent none
     stages {
-        stage ('Run parallel all stages') {
-            parallel {
-        stage ('Build'){
-            agent {label 'built-in'}
-            steps {
-                echo "hello"
-                sh ''' /home/ubuntu/big2.sh 45 67
-                sleep 5 '''
+        stage ('RUN STAGES PARALLEL') {
+        parallel {
+            stage ('BUILD'){
+                agent {label 'built-in'}
+                steps {
+                    echo "this is build stage"
+                }
             }
+               stage ('TEST'){
+                agent {label 'test1'}
+                steps {
+                    echo "this is test stage"
+                } 
+               }
+           stage ('TEST'){
+               agent {label 'node2'} 
+               steps {
+                    echo "this is test stage"
+                }
+               }
         }
-        stage ('test'){
-            
-steps {
-    echo "how"
-}
-        }
-        stage ('deploy') {
-            
-            steps {
-                echo "why"
-            }
-        }
-            }
         }
     }
 }
