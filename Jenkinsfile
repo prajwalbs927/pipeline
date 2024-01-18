@@ -10,17 +10,17 @@ pipeline{
                     sh 'sleep'
                 }
             }
-               stage ('TEST'){
+               stage ('TESt'){
                 agent {label 'test1'}
                 steps {
                     echo "this is test stage"
                     sh 'sleep'
                 } 
                }
-           stage ('TEST'){
+           stage ('DEPLOY'){
                agent {label 'node2'} 
                steps {
-                    echo "this is test stage"
+                    echo "this is deploy stage"
                     sh 'sleep'
                 }
                }
