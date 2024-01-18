@@ -1,6 +1,8 @@
 pipeline {
 agent none
   stages {
+    stage ('DEPLOY parallel') {
+      parallel {
     stage ('BUILD') {
       agent {label 'node2'}
   steps {
@@ -15,8 +17,7 @@ agent none
     sh 'sleep 5'
 } 
 }
-    stage ('DEPLOY parallel') {
-      parallel {
+    
       stage ('Deploy') {
       agent {label 'test1'}
   steps {
