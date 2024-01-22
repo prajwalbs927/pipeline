@@ -7,10 +7,11 @@ pipeline{
                 agent {label 'built-in'}
                 steps {
                     echo "this is build stage"
+        
                     
                 }
             }
-               stage ('TESt'){
+               stage ('TEST'){
                 agent {label 'test1'}
                 steps {
                     echo "this is test stage"
