@@ -7,7 +7,7 @@ stage ('Run parallel build and test') {
 agent {label 'built-in'}
             steps {
                 echo "this is build stage"
-                sh ''' /home/ubuntu/big2.sh 12
+                sh ''' /home/ubuntu/big2.sh 12 6
                 '''
 
         }
